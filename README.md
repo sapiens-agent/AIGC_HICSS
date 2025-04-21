@@ -57,7 +57,7 @@
 
 ### AIGC With System Close Up (Above) vs Long Shot (Below) for Dry Fruit
 
-![Dry Fruit](AIGC_Image_Examples/dry fruit.png)
+![Dry Fruit](AIGC_Image_Examples/dry%20fruit.png)
 
 
 ### AIGC With System Close Up (Above) vs Long Shot (Below) for Facial Tissue
