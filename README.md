@@ -17,7 +17,7 @@
 ## 2. Hotel Surroundings vs Hotel Amendities Example Comparison
 
 ### Original Image Hotel Surroundings (Left) vs Hotel Amendities (Right)
-![Original Image ](AIGC_Image_Examples/原图实验awe vs content.png)
+![Original Image ](AIGC_Image_Examples/原图实验awe%20vs%20content.png)
 
 ---
 
