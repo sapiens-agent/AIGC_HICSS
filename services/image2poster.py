@@ -35,24 +35,24 @@ class Image2PosterProcessor(ComfyuiTaskProcessor):
         self.scale_max = settings.IMAGE2POSTER_SCALE_MAX
         self.batchsize_use_one_prompt = settings.IMAGE2POSTER_BATCHSIZE_USE_ONE_PROMPT
 
-        # 提示词工程
-        prompts_template_path = 'templates/prompt_templates.yml'    # 用户提示词模板
-        template_key = "image_generate_poster"     # prompt的模板key
+        # Prompt engineering
+        prompts_template_path = 'templates/prompt_templates.yml'    # User prompt template
+        template_key = "image_generate_poster"     # prompt template key
         self.system_prompt = self.load_system_prompt(prompts_template_path, template_key)
-        # 图片生成坐标 
+        # Image generation coordinates 
         image2position_key = "product_image_position"
         image2position_prompt = self.load_template_prompt(prompts_template_path, image2position_key)
-        self.image2position_system_prompt = image2position_prompt['system_prompt']  # 系统提示词
-        self.image2position_user_template_prompt = image2position_prompt['user_prompt_template']    # 用户案例
+        self.image2position_system_prompt = image2position_prompt['system_prompt']  # System prompt
+        self.image2position_user_template_prompt = image2position_prompt['user_prompt_template']    # User case
 
-        # 位置生成器
+        # Position generator
         self.position_generator = PositionGenerator(model_client=self.model_client, model_name=self.model_name)
 
         self.workflow_data = None
         with open('templates/comfyui_workflows/image2poster.json', 'r', encoding='utf-8') as file:
             self.workflow_data = json.load(file)
 
-        # 定义工作流节点ID常量
+        # Define workflow node ID constants
         self.input_node_ids = {
             'input_image': '1',
             'text_prompt': '355',
@@ -64,20 +64,20 @@ class Image2PosterProcessor(ComfyuiTaskProcessor):
             'input_size': '3'
         }
 
-        # 输出中间结果
+        # Output intermediate results
         self.output_node_ids_show_middle_result = {
-            '172': 'step1_image_url',  # 位置图片
-            '551': 'step2_image_url',  # Flux生成背景图（含主体）
-            '353': 'step3_image_url',  # 背景图去除主体
-            '588': 'step4_image_url',  # 合成图
-            '585': 'final_image_url'   # 最终生成图
+            '172': 'step1_image_url',  # Position image
+            '551': 'step2_image_url',  # Flux generates background image (with main subject)
+            '353': 'step3_image_url',  # Background image without main subject
+            '588': 'step4_image_url',  # Composite image
+            '585': 'final_image_url'   # Final generated image
         }
-        # 直接输出最终结果
+        # Output final result
         self.output_node_ids = {
-            '585': 'final_image_url'   # 最终生成图
+            '585': 'final_image_url'   # Final generated image
         }
 
-        # 将原workflow里面的 'SaveImage', 'PreviewImage' 改为 'SaveImageWebsocket'，目的是使用websocket的方式获取图片。
+        # Change the original workflow's 'SaveImage', 'PreviewImage' to 'SaveImageWebsocket', the purpose is to use the websocket method to get the image.
         self.change_workflow_output_to_websocket(self.workflow_data)
 
     def _set_workflow_params(self, workflow_data: dict, params: dict) -> None:
