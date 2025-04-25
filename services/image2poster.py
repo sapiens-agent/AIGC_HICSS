@@ -136,7 +136,7 @@ class Image2PosterProcessor(ComfyuiTaskProcessor):
         try:
             input_image = await self.upload_local_image_to_comfyui(image_path)
             logger.info(f'input_image: {input_image}')
-        except Exception as e:
+        except Exception as e: 
             logger.error(f"tasktype-{self.task_type} ERROR INFO: cannot upload image to comfyui, ERROR INFO:{e}")
             return {"status": False, "message": "process run failed. ", "data": None}
 

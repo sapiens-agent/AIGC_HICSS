@@ -12,9 +12,9 @@ class GeneratePrompt():
             status, message = self.validate_prompt_format(prompt_message)
             if status:
                 return message
-            if "内容不符合内容审查的规范" in message:
+            if "The content you generated does not comply with content review standards, please use appropriate prompts" in message:
                 return message
-            if "验证提示词格式时发生错误" in message:   
+            if "Error validating prompt format" in message:   
                 print(message)
                 return None
             input_prompt = raw_input_prompt + ", " + message
@@ -64,10 +64,10 @@ class GeneratePrompt():
             optimized_prompt = ", ".join(filter(None, [x.strip() for x in optimized_prompt.split(",")]))
             return optimized_prompt
         except Exception as e:
-            # 检查是否为内容审查错误
+            # Check if it is a content review error
             error_str = str(response.choices[0])
             if "content_filter" in error_str:
-                return "您生成的内容不符合内容审查的规范，请重新使用合适的提示词"
+                return "The content you generated does not comply with content review standards, please use appropriate prompts"
             print(f"Error generating prompt: {str(e)}")
             # If other API calls fail, return a simple combined prompt
             return f"{system_prompt}, {input_prompt}"
@@ -87,21 +87,20 @@ class GeneratePrompt():
         try:
             # Check if the prompt contains braces or brackets
             if '{' in prompt or '}' in prompt or '[' in prompt or ']' in prompt or '`' in prompt:
-                return False, "提示词包含非法字符 {} 或 [] 或 `,请返回纯文本的str格式的prompt信息"
+                return False, "The prompt contains illegal characters {} or [] or `, please return a pure text str format prompt information"
             if "prompt" in prompt.lower():
-                return False, "提示词包含非必要的关键词 'prompt', 请直接返回纯文本的prompt信息，无需包含任何prompt的关键字的结构信息"
+                return False, "The prompt contains non-essential keywords 'prompt', please return a pure text prompt information directly, without any prompt keyword structure information"
             # Check if it contains specific keywords
-            if "生成的内容不符合内容审查的规范，请重新使用合适的提示词" in prompt:
-                return False, "生成的内容不符合内容审查的规范，请重新使用合适的提示词"
-                
+            if "The content you generated does not comply with content review standards, please use appropriate prompts" in prompt:
+                return False, "The content you generated does not comply with content review standards, please use appropriate prompts"
             # Check if the prompt contains Chinese characters
             if any('\u4e00' <= char <= '\u9fff' for char in prompt):
-                return False, "提示词包含中文字符"
+                return False, "The prompt contains Chinese characters"
                 
             return True, prompt
             
         except Exception as e:
-            return False, f"验证提示词格式时发生错误: {str(e)}"
+            return False, f"Error validating prompt format: {str(e)}"
 
 
 async def main(system_prompt, input_prompt):
