@@ -82,13 +82,13 @@ class Image2PosterProcessor(ComfyuiTaskProcessor):
 
     def _set_workflow_params(self, workflow_data: dict, params: dict) -> None:
         """
-        设置工作流参数
+        setting workflow parameters
 
         Args:
-            workflow_data: 工作流数据
-            params: 参数字典，包含所有需要设置的参数
+            workflow_data: Workflow data
+            params: Dictionary containing all parameters to be set
         Returns:
-            result: 设置好参数的工作流数据
+            result: Workflow data with parameters set
         """
         node_params = {
             self.input_node_ids['input_image']: {'image': params['input_image']},
