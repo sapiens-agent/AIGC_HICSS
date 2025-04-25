@@ -1,6 +1,6 @@
 # AIGC
 
-## 📚 Installation & Usage Guide | 安装使用教程
+## 📚 Installation & Usage Guide 
 
 - [Installation and Usage Guide (English)](docs/INSTALL.md)
 
