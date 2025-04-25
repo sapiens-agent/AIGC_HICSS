@@ -1,0 +1,26 @@
+__pycache__/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.*
+!.env.example
+.venv
+venv/
+ENV/
+
+# Data
+data/
+tmp/
+.DS_Store
+
+# Logs
+logs/*
+
+# Conda
+.conda/

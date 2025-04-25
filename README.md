@@ -1,4 +1,10 @@
 # AIGC
+
+## 📚 Installation & Usage Guide | 安装使用教程
+
+- [Installation and Usage Guide (English)](docs/INSTALL.md)
+- [安装与使用指南 (中文)](docs/安装教程.md)
+
 # Image Examples and Comparison
 
 ## 1. Variation Comparison
