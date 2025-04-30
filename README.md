@@ -12,7 +12,7 @@
 
 ---
  ### AIGC Baseline
-![AIGC Baseline](AIGC_Image_Examples/无理论组.png)
+![AIGC Baseline](AIGC_Image_Examples/baseline.jpg)
 
 ---
 ### AIGC with Our System
