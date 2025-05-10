@@ -2,13 +2,16 @@
 
 ## 📚 Installation & Usage Guide 
 
-- [Installation and Usage Guide (English)](docs/INSTALL.md)
 
 # Image Examples and Comparison
 
 ## 1. Variation Comparison
 ### Human Design
+<<<<<<< HEAD
 ![Human Design](AIGC_Image_Examples/pgc.png)
+=======
+![Human Design](AIGC_Image_Examples/human_design.png)
+>>>>>>> 644d35111aa5083c36ff48ef2149adda92a98afb
 
 ---
  ### AIGC Baseline
@@ -16,13 +19,21 @@
 
 ---
 ### AIGC with Our System
+<<<<<<< HEAD
 ![AIGC with Our System](AIGC_Image_Examples/system.png)
+=======
+![AIGC with Our System](AIGC_Image_Examples/aigc_with_our_system.png)
+>>>>>>> 644d35111aa5083c36ff48ef2149adda92a98afb
 
 ---
 ## 2. Hotel Surroundings vs Hotel Amendities Example Comparison
 
 ### Original Image Hotel Surroundings (Left) vs Hotel Amendities (Right)
+<<<<<<< HEAD
 ![Original Image ](AIGC_Image_Examples/Original%20awe%20vs%20content.png)
+=======
+![Original Image ](AIGC_Image_Examples/original_image_hotel_surroundings_and_hotel_amendities.png)
+>>>>>>> 644d35111aa5083c36ff48ef2149adda92a98afb
 
 ---
 
@@ -79,10 +90,17 @@
 ## 4. Realistic vs Unrealistic Comparison
 
 ### Original Realistic (Above) vs Unrealistic (Below) 1
+<<<<<<< HEAD
 ![Original](AIGC_Image_Examples/Originalrealistic%20vs%20unrealistic.png)
 
 ### Original Realistic (Above) vs Unrealistic (Below) 2
 ![Original](AIGC_Image_Examples/Originalrealistic%20vs%20unrealistic%20汽车.png)
+=======
+![Original](AIGC_Image_Examples/original_realistic_vs_unrealistic.png)
+
+### Original Realistic (Above) vs Unrealistic (Below) 2
+![Original](AIGC_Image_Examples/original_realistic_vs_unrealistic_car.png)
+>>>>>>> 644d35111aa5083c36ff48ef2149adda92a98afb
 
 ---
 ### AIGC with System Realistic (Above) vs Unrealistic (Below) for Avocado
