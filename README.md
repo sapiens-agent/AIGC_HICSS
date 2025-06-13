@@ -8,9 +8,10 @@
 - [Supplementary Appendix](docs/Supplement.md)
 - [Study 3 (Theory Validation Applications) Images](docs/STUDY3.md)
 
-## Image Examples and Comparison
 
-### 1. Variation Comparison
+### 1. Image Variation Comparison
+
+---
 #### Human Design
 ![Human Design](AIGC_Image_Examples/human_design.png)
 
