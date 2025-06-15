@@ -22,8 +22,3 @@
 #### AIGC with Our System
 ![AIGC with Our System](AIGC_Image_Examples/aigc_with_our_system.png)
 
----
-
-
-### 2. Evaluating Workflow
-![workflow](AIGC_Image_Examples/evaluator_workflow.png) 
