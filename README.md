@@ -6,7 +6,6 @@
 
 ## 📖 Paper Supplementary Materials
 - [Supplementary Appendix](docs/Supplement.md)
-- [Study 3 (Theory Validation Applications) Images](docs/STUDY3.md)
 
 
 ### 1. Image Variation Comparison
